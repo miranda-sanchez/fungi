@@ -45,7 +45,7 @@ p {
     position: relative;
     font-size: 20px;
     /* Delete this after having finished the design */
-    display: none;
+    display: none; 
 }
  
 .view:first-child section {
@@ -73,7 +73,7 @@ p {
     position: relative;
     background-image: url("../img/stars.PNG");
     background-size: cover;
-    background-color: #FFFAE3;
+    background-image: linear-gradient(to right top, #f5cce8, #f3daf2, #f4e7f9, #f8f3fd, #ffffff);
 }
 
 .view:nth-child(2) section {
