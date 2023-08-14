@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-h1 {
+h1, h2 {
     font-family: 'Bricolage Grotesque', sans-serif;
     padding: 1rem 0;
 }
@@ -23,11 +23,14 @@ h1 {
 button {
     padding: 0.5rem 1rem;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     background-color: #294D4A;
     color: #FFFAE3;
     border: none;
     cursor: pointer;
 }
+
+/* First view */
 
 .view:first-child {
     height: 100vh;
@@ -37,11 +40,15 @@ button {
     align-items: center;
     position: relative;
     font-size: 20px;
+    /* Delete this after having finished the design */
+    display: none;
 }
  
 .view:first-child section {
     text-align: center;
     z-index: 10;
+    height: 50%;
+    margin: 0 20px;
 }
 
 
@@ -52,3 +59,43 @@ button {
     left: 0;
 }
 
+/* Second view */
+.view:nth-child(2) {
+    display: none;
+    /* Delete this after having finished the design */
+    display: block;
+    height: 90vh;
+    position: relative;
+    background-image: url("../img/stars.PNG");
+    background-size: cover;
+    background-color: #FFFAE3;
+}
+
+.view:nth-child(2) section {
+    margin: 0 20px;
+    text-align: center;
+    height: 90vh;
+    display: grid;
+    place-content: center;
+    position: fixed;
+    z-index: 2;
+}
+
+.view:nth-child(2) figure img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.view:nth-child(2) figure img:nth-child(2) {
+    z-index: 3;
+}
+.view:nth-child(2) figure img:nth-child(2) {
+    z-index: 4;
+}
+
+main {
+    height: 100vh;
+    background-color: black;
+}
