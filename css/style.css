@@ -30,6 +30,10 @@ button {
     cursor: pointer;
 }
 
+p {
+    max-width: 600px;
+}
+
 /* First view */
 
 .view:first-child {
@@ -63,7 +67,8 @@ button {
 .view:nth-child(2) {
     display: none;
     /* Delete this after having finished the design */
-    display: block;
+    display: flex;
+    justify-content: center;
     height: 90vh;
     position: relative;
     background-image: url("../img/stars.PNG");
@@ -77,6 +82,7 @@ button {
     height: 90vh;
     display: grid;
     place-content: center;
+    justify-content: center;
     position: fixed;
     z-index: 2;
 }
