@@ -17,7 +17,8 @@ body {
 
 h1, h2 {
     font-family: 'Bricolage Grotesque', sans-serif;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem 0;
+    color: #294D4A;
 }
 
 button {
@@ -33,7 +34,7 @@ button {
 p {
     max-width: 600px;
 }
-
+/* MOBILE-FIRST APPROACH */
 /* First view */
 
 .view:first-child {
@@ -73,9 +74,17 @@ p {
     position: relative;
     background-image: url("../img/stars.PNG");
     background-size: cover;
-    background-image: linear-gradient(to right top, #f5cce8, #f3daf2, #f4e7f9, #f8f3fd, #ffffff);
+    background-image: linear-gradient(to bottom, #a9fff7, #acf7ff, #c7ebff, #e4deff, #f5d5ed);
+    z-index: -100;
 }
 
+#moon-sun {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    z-index: -20;
+}
 .view:nth-child(2) section {
     margin: 0 20px;
     text-align: center;
@@ -84,7 +93,7 @@ p {
     place-content: center;
     justify-content: center;
     position: fixed;
-    z-index: 2;
+    z-index: -10;
 }
 
 .view:nth-child(2) figure img {
@@ -94,14 +103,43 @@ p {
     left: 0;
 }
 
+.view:nth-child(2) figure img:first-child {
+    z-index: -12;
+}
+
 .view:nth-child(2) figure img:nth-child(2) {
     z-index: 3;
 }
-.view:nth-child(2) figure img:nth-child(2) {
-    z-index: 4;
+
+
+
+/* Main
+Importance section */
+
+#importance {
+    padding-top: 10vh;
+    text-align: center;
+    background-color: #242324;
+    display: grid;
+    place-content: center;
+    position: relative;
 }
 
-main {
-    height: 100vh;
-    background-color: black;
+#importance h2, #importance p {
+    color: #FFFAE3;
+    padding: 1rem;
+}
+
+#dripping-img {
+    position: absolute;
+    left: 0;
+    top:  100%;
+    height: 0%;
+    width: 100%;
+}
+
+/* Fungi section */
+
+#fungi h2{
+    text-transform: lowercase;
 }
