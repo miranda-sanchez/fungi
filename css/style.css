@@ -13,13 +13,31 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    color: #FFFAE3;
 }
 
 h1, h2 {
     font-family: 'Bricolage Grotesque', sans-serif;
     padding: 1rem 0 0.5rem 0;
-    color: #294D4A;
+    /* Animation with JS */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+    
 }
+
+p {
+    max-width: 600px;
+    /* Animation with JS */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease 0.5s ;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 button {
     padding: 0.5rem 1rem;
@@ -31,9 +49,6 @@ button {
     cursor: pointer;
 }
 
-p {
-    max-width: 600px;
-}
 /* MOBILE-FIRST APPROACH */
 /* First view */
 
@@ -74,8 +89,9 @@ p {
     position: relative;
     background-image: url("../img/stars.PNG");
     background-size: cover;
-    background-image: linear-gradient(to bottom, #a9fff7, #acf7ff, #c7ebff, #e4deff, #f5d5ed);
+    background-image: linear-gradient(to bottom, #280a35, #3f184e, #572769, #703784, #8b47a1);
     z-index: -100;
+    
 }
 
 #moon-sun {
@@ -107,11 +123,9 @@ p {
     z-index: -12;
 }
 
-.view:nth-child(2) figure img:nth-child(2) {
+.view:nth-child(2) figure img:last-child {
     z-index: 3;
 }
-
-
 
 /* Main
 Importance section */
@@ -119,14 +133,13 @@ Importance section */
 #importance {
     padding-top: 10vh;
     text-align: center;
-    background-color: #242324;
+    background-color: #290C36;
     display: grid;
     place-content: center;
     position: relative;
 }
 
 #importance h2, #importance p {
-    color: #FFFAE3;
     padding: 1rem;
 }
 
@@ -134,12 +147,23 @@ Importance section */
     position: absolute;
     left: 0;
     top:  100%;
-    height: 0%;
+    height: 0;
     width: 100%;
 }
 
 /* Fungi section */
-
+#fungi {
+    background-color: #FFFAE3;
+    margin-top: 150px;
+    color: #290C36;
+}
 #fungi h2{
     text-transform: lowercase;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#fungi img {
+    height: 300px;
 }
