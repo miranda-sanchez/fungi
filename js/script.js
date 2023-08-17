@@ -81,20 +81,23 @@ animateImage();
 const fungiData = [
   {
     id: "01",
-    title: "Title 1",
-    paragraph: "paragraph 1",
+    title: "Boletus Edulis",
+    paragraph:
+      "Widely distributed in the Northern Hemisphere across Europe, Asia, and North America, the fungus grows in deciduous and coniferous forests and tree plantations, forming symbiotic ectomycorrhizal associations with living trees by enveloping the tree's underground roots with sheaths of fungal tissue. Prized as an ingredient in various culinary dishes, this mushroom is an edible mushroom held in high regard in many cuisines, and is commonly prepared and eaten in soups, pasta, or risotto. ",
     imageSrc: "img/fungi1.PNG",
   },
   {
     id: "02",
-    title: "Title 2",
-    paragraph: "paragraph 2",
+    title: "Armillaria Mellea",
+    paragraph:
+      'Armillaria mellea is widely distributed in temperate regions of the Northern Hemisphere. Armillaria mellea, commonly known as honey fungus, is a edible basidiomycete fungus in the genus Armillaria. Armillaria mellea mushroom are considered good edibles, though not preferred by some, and the tough stalks are usually excluded. Some individuals have reported "allergic" reactions that result in stomach upsets. They may have been used medicinally by indigenous peoples as a laxative.',
     imageSrc: "img/fungi2.PNG",
   },
   {
     id: "03",
-    title: "Title 3",
-    paragraph: "paragraph 3",
+    title: "Amanita Muscaria",
+    paragraph:
+      "Native throughout the temperate and boreal regions of the Northern Hemisphere, Amanita muscaria has been unintentionally introduced to many countries in the Southern Hemisphere. Despite its easily distinguishable features, Amanita muscaria is a fungus with several known variations, or subspecies. Although poisonous, death due to poisoning from A. muscaria ingestion is quite rare. Parboiling twice with water draining weakens its toxicity and breaks down the mushroom's psychoactive substances/ All Amanita muscaria varieties, but in particular A. muscaria var. muscaria, are noted for their hallucinogenic properties, with the main psychoactive constituents being muscimol and its neurotoxic precursor ibotenic acid. A local variety of the mushroom was used as an intoxicant and entheogen by the indigenous peoples of Siberia.",
     imageSrc: "img/fungi3.PNG",
   },
   {
@@ -105,14 +108,16 @@ const fungiData = [
   },
   {
     id: "05",
-    title: "Title 5",
-    paragraph: "paragraph 5",
+    title: "Cantharellus Cibarius",
+    paragraph:
+      "It grows in Europe from Scandinavia to the Mediterranean Basin, mainly in deciduous and coniferous forests. Due to its characteristic color and shape, it is easy to distinguish from mushrooms with potential toxicity that discourage human consumption. A commonly eaten and favored mushroom, the chanterelle is typically harvested from late summer to late fall in its European distribution. Chanterelles are used in many culinary dishes. An oven should not be used when drying because it can result in the mushroom becoming bitter.",
     imageSrc: "img/fungi5.PNG",
   },
   {
     id: "06",
-    title: "Title 6",
-    paragraph: "paragraph 6",
+    title: "Morchella Esculenta",
+    paragraph:
+      'This mushroom (commonly known as common morel, morel, yellow morel, true morel, morel mushroom, and sponge morel) is usually found in early spring, in forests, orchards, yards, gardens and sometimes in recently burned areas.[1] In North America, it is sometimes referred to as the "May mushroom" due to its consistent fruiting in that monthMorchella esculenta, like all morels, are among the most highly prized of all edible mushrooms. Raw morels have a gastrointestinal irritant, hydrazine, but parboiling or blanching before consumption will remove it.',
     imageSrc: "img/fungi6.PNG",
   },
   {
@@ -123,31 +128,44 @@ const fungiData = [
   },
   {
     id: "08",
-    title: "Title 8",
-    paragraph: "paragraph 8",
+    title: "Pleurotus Ostreatus",
+    paragraph:
+      "Pleurotus ostreatus, the oyster mushroom, oyster fungus, hiratake, or pearl oyster mushroom is a common edible mushroom. It is one of the more commonly sought wild mushrooms, though it can also be cultivated on straw and other media. It is a delicacy in Japanese, Korean and Chinese cuisine. The pearl oyster mushroom is also used to create mycelium bricks, mycelium furniture, and leather-like products. Oyster mushrooms can also be used industrially for mycoremediation purposes. Oyster mushrooms can also be used industrially for mycoremediation purposes: they were used to treat soil that had been polluted with diesel oil. ",
     imageSrc: "img/fungi8.PNG",
   },
 ];
 
-const fungiSection = document.getElementById("fungi");
+const fungi = document.getElementById("fungi");
 
 fungiData.forEach((data) => {
+  const itemContainer = document.createElement("article");
+  itemContainer.classList.add("item-container");
+
   const span = document.createElement("span");
   span.textContent = data.id;
 
   const h2 = document.createElement("h2");
   h2.textContent = data.title;
 
+  const fungiContentContainer = document.createElement("div");
+
   const img = document.createElement("img");
   img.src = data.imageSrc;
-  img.alt = data.title;
+  img.alt = data.title + " watercolor illustration";
 
   const paragraph = document.createElement("p");
   paragraph.textContent = data.paragraph;
   paragraph.classList.add("animate");
 
-  fungiSection.appendChild(span);
-  fungiSection.appendChild(h2);
-  fungiSection.appendChild(img);
-  fungiSection.appendChild(paragraph);
+  itemContainer.appendChild(span);
+  itemContainer.appendChild(h2);
+  itemContainer.appendChild(fungiContentContainer);
+
+  // Append the img and paragraph elements inside the div
+  fungiContentContainer.appendChild(img);
+  fungiContentContainer.appendChild(paragraph);
+
+  itemContainer.appendChild(fungiContentContainer);
+
+  fungi.appendChild(itemContainer);
 });

@@ -123,8 +123,12 @@ button {
     z-index: -12;
 }
 
+.view:nth-child(2) figure img:nth-child(2) {
+    z-index: -10;
+}
+
 .view:nth-child(2) figure img:last-child {
-    z-index: 3;
+    z-index: -6;
 }
 
 /* Main
@@ -149,21 +153,39 @@ Importance section */
     top:  100%;
     height: 0;
     width: 100%;
+    z-index: 10;
 }
 
 /* Fungi section */
 #fungi {
     background-color: #FFFAE3;
-    margin-top: 150px;
+    padding-top: 150px;
     color: #290C36;
 }
-#fungi h2{
+
+.item-container {
+    border: 2px solid rgb(227, 230, 27);
+    padding: 10px 15px;
+    display: grid;
+    
+}
+
+.item-container h2{
     text-transform: lowercase;
+    text-align: center;
     opacity: 1;
     transform: translateY(0);
 }
 
 
-#fungi img {
-    height: 300px;
+.item-container img {
+    height: 400px;
+    padding: 10px;
+    
+}
+
+.item-container div {
+    border: 1px solid blue;
+    text-align: center;
+
 }
