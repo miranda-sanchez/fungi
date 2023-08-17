@@ -148,6 +148,7 @@ fungiData.forEach((data) => {
   h2.textContent = data.title;
 
   const fungiContentContainer = document.createElement("div");
+  fungiContentContainer.classList.add("content-container");
 
   const img = document.createElement("img");
   img.src = data.imageSrc;
@@ -158,11 +159,11 @@ fungiData.forEach((data) => {
   paragraph.classList.add("animate");
 
   itemContainer.appendChild(span);
-  itemContainer.appendChild(h2);
   itemContainer.appendChild(fungiContentContainer);
+  itemContainer.appendChild(img);
 
   // Append the img and paragraph elements inside the div
-  fungiContentContainer.appendChild(img);
+  fungiContentContainer.appendChild(h2);
   fungiContentContainer.appendChild(paragraph);
 
   itemContainer.appendChild(fungiContentContainer);
