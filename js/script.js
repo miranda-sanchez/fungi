@@ -66,8 +66,29 @@ function animateImage() {
   const drippingImg = document.getElementById("dripping-img");
 
   if (isElementInViewport(drippingImg)) {
-    drippingImg.style.height = "150px";
+    // Get the current screen width
+    const screenWidth = window.innerWidth;
+
+    // Determine the height based on screen width using ternary operator
+    const imgHeight =
+      screenWidth >= 1400
+        ? "420px"
+        : screenWidth >= 1200
+        ? "300px"
+        : screenWidth >= 992
+        ? "280px"
+        : screenWidth >= 768
+        ? "190px"
+        : screenWidth >= 576
+        ? "170px"
+        : "150px"; // Default
+
+    // Set the image height and transition
+    drippingImg.style.height = imgHeight;
     drippingImg.style.transition = "1s";
+
+    const fungi = document.getElementById("fungi");
+    fungi.style.paddingTop = parseInt(imgHeight) - 50 + "px";
   }
 }
 
@@ -78,6 +99,7 @@ window.addEventListener("scroll", animateImage);
 animateImage();
 
 // FUNGI SECTION
+// 'const fungi' has already been declared inside function animateImage(), which is the section to which the code bellow is appended
 const fungiData = [
   {
     id: "01",
@@ -135,38 +157,47 @@ const fungiData = [
   },
 ];
 
-const fungi = document.getElementById("fungi");
-
 fungiData.forEach((data) => {
   const itemContainer = document.createElement("article");
   itemContainer.classList.add("item-container");
 
+  const fungiVisualContainer = document.createElement("div");
+  fungiVisualContainer.classList.add("visual-container");
+
   const span = document.createElement("span");
   span.textContent = data.id;
 
-  const h2 = document.createElement("h2");
-  h2.textContent = data.title;
-
-  const fungiContentContainer = document.createElement("div");
-  fungiContentContainer.classList.add("content-container");
+  const figure = document.createElement("figure");
 
   const img = document.createElement("img");
   img.src = data.imageSrc;
   img.alt = data.title + " watercolor illustration";
 
+  const btn = document.createElement("button");
+  btn.textContent = "Discover";
+
+  const fungiInfoContainer = document.createElement("div");
+  fungiInfoContainer.classList.add("info-container");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = data.title;
+
   const paragraph = document.createElement("p");
   paragraph.textContent = data.paragraph;
   paragraph.classList.add("animate");
 
-  itemContainer.appendChild(span);
-  itemContainer.appendChild(fungiContentContainer);
-  itemContainer.appendChild(img);
+  // Append the img element inside figure
+  figure.appendChild(img);
 
-  // Append the img and paragraph elements inside the div
-  fungiContentContainer.appendChild(h2);
-  fungiContentContainer.appendChild(paragraph);
+  fungiVisualContainer.appendChild(span);
+  fungiVisualContainer.appendChild(figure);
+  fungiVisualContainer.appendChild(btn);
 
-  itemContainer.appendChild(fungiContentContainer);
+  itemContainer.appendChild(fungiVisualContainer);
+
+  // Append the h2 and paragraph elements inside the div
+  fungiInfoContainer.appendChild(h2);
+  fungiInfoContainer.appendChild(paragraph);
 
   fungi.appendChild(itemContainer);
 });
