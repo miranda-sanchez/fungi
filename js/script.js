@@ -48,6 +48,23 @@ pToAnimate.forEach((paragraph) => {
   observer.observe(paragraph);
 });
 
+// SCROLL TO TOP BUTTON
+const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > (100 * window.innerHeight) / 100) {
+    scrollToTopBtn.style.bottom = "20px";
+    scrollToTopBtn.style.opacity = "1";
+  } else {
+    scrollToTopBtn.style.bottom = "-50px";
+    scrollToTopBtn.style.opacity = "0";
+  }
+});
+
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 // IMPORTANCE SECTION
 // Function to check if an element is in the viewport
 function isElementInViewport(el) {
@@ -178,6 +195,7 @@ fungiData.forEach((data) => {
 
   const fungiInfoContainer = document.createElement("div");
   fungiInfoContainer.classList.add("info-container");
+  fungiInfoContainer.style.display = "none";
 
   const h2 = document.createElement("h2");
   h2.textContent = data.title;
@@ -198,6 +216,8 @@ fungiData.forEach((data) => {
   // Append the h2 and paragraph elements inside the div
   fungiInfoContainer.appendChild(h2);
   fungiInfoContainer.appendChild(paragraph);
+
+  itemContainer.appendChild(fungiInfoContainer);
 
   fungi.appendChild(itemContainer);
 });
