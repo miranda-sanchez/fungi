@@ -93,7 +93,6 @@ button {
     background-size: cover;
     background-image: linear-gradient(to bottom, #280a35, #3f184e, #572769, #703784, #8b47a1);
     z-index: -100;
-    
 }
 
 #moon-sun {
@@ -135,7 +134,6 @@ button {
 
 /* Main
 Importance section */
-
 #importance {
     padding-top: 10vh;
     text-align: center;
@@ -143,6 +141,7 @@ Importance section */
     display: grid;
     place-content: center;
     position: relative;
+    z-index: 10;
 }
 
 #importance h2, #importance p {
@@ -169,6 +168,30 @@ Importance section */
     align-items: center;
     justify-content: center;
     row-gap: 3rem;
+    position: relative;
+}
+
+#scroll-to-top-btn {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    padding: 10px;
+    background-color: #c7c551;
+    border-bottom: 2px #280C35 solid;
+    border-radius: 50%;
+    z-index: 9;
+    /* Displayed with Js */
+    transition: bottom 1s, opacity 1s;
+    opacity: 0;
+}
+
+#scroll-to-top-btn:hover {
+    background-color: #c7c551e8;
+
+}
+
+#scroll-to-top-btn img {
+    height: 20px;
 }
 
 .item-container {
@@ -240,6 +263,13 @@ footer{
     background-color: #8b47a1;
     position: relative;
     height:200px;
+    display: flex;
+}
+
+footer span {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 footer img {
@@ -247,21 +277,24 @@ footer img {
     width: 100%;
     bottom: 0;
     left: 0;
-
-    
 }
-
-
 
 @media (min-width: 576px) {
     #fungi {
         background-color: rgba(0, 0, 255, 0.219);
-       
     }
 
+    #scroll-to-top-btn img {
+        height: 30px;
+    }
 }
 
 @media (min-width: 768px) {
+    .view:nth-child(2) section {
+        display: block;
+        margin-top: 200px;
+    }
+
     #fungi {
         background-color: #257e2a;
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -276,18 +309,42 @@ footer img {
     body {
         font-size: 20px;
     }
+
+    .view:nth-child(2) figure img {
+        height: 700px;
+    }
+
+    #scroll-to-top-btn img {
+        height: 40px;
+    }
+
     #fungi {
         background-color: #7e2577;
     }
 }
 
 @media (min-width: 1200px) {
+    .view:nth-child(2){
+        height: 100vh;
+    }
+    .view:nth-child(2) section {
+        display: block;
+        margin-top: 50px;
+    }
+    .view:nth-child(2) figure img {
+        height: 900px;
+    }
+
     #fungi {
-        background-color: #206461;
+        background-color: #966423;
     }
 }
 
 @media (min-width: 1400px) {
+    .view:nth-child(2) figure img {
+        height: 1000px;
+    }
+
     #fungi {
         background-color: hsl(4, 51%, 83%);
     }
