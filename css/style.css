@@ -57,9 +57,9 @@ button {
     display: none;
     position: fixed;
     top: 0;
-    height: 100vh; /* Ocupa toda la altura visible de la pantalla */
+    height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: space-between;
     z-index: 4000;
   }
