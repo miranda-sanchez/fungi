@@ -192,6 +192,10 @@ fungiData.forEach((data) => {
 
   const btn = document.createElement("button");
   btn.textContent = "Discover";
+  btn.addEventListener("click", () => {
+    const sideImages = document.getElementById("side-images");
+    sideImages.style.display = "flex";
+  });
 
   const fungiInfoContainer = document.createElement("div");
   fungiInfoContainer.classList.add("info-container");

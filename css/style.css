@@ -53,6 +53,30 @@ button {
 
 /* MOBILE-FIRST APPROACH */
 /* First view */
+#side-images {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100vh; /* Ocupa toda la altura visible de la pantalla */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    justify-content: space-between;
+    z-index: 4000;
+  }
+  
+  #side-images img {
+    height: 50vh;
+  }
+  
+  img:nth-child(odd) {
+    left: 0;
+  }
+  
+  img:nth-child(even)  {
+    right: 0;
+  }
+
+
 
 .view:first-child {
     height: 100vh;
