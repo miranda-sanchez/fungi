@@ -141,12 +141,6 @@ const fungiData = [
   },
   {
     id: "04",
-    title: "Title 4",
-    paragraph: "paragraph 4",
-    imageSrc: "img/fungi4.PNG",
-  },
-  {
-    id: "05",
     title: "Cantharellus Cibarius",
     paragraph:
       "It grows in Europe from Scandinavia to the Mediterranean Basin, mainly in deciduous and coniferous forests. Due to its characteristic color and shape, it is easy to distinguish from mushrooms with potential toxicity that discourage human consumption. A commonly eaten and favored mushroom, the chanterelle is typically harvested from late summer to late fall in its European distribution. Chanterelles are used in many culinary dishes. An oven should not be used when drying because it can result in the mushroom becoming bitter.",
@@ -161,12 +155,6 @@ const fungiData = [
   },
   {
     id: "07",
-    title: "Title 7",
-    paragraph: "paragraph 7",
-    imageSrc: "img/fungi7.PNG",
-  },
-  {
-    id: "08",
     title: "Pleurotus Ostreatus",
     paragraph:
       "Pleurotus ostreatus, the oyster mushroom, oyster fungus, hiratake, or pearl oyster mushroom is a common edible mushroom. It is one of the more commonly sought wild mushrooms, though it can also be cultivated on straw and other media. It is a delicacy in Japanese, Korean and Chinese cuisine. The pearl oyster mushroom is also used to create mycelium bricks, mycelium furniture, and leather-like products. Oyster mushrooms can also be used industrially for mycoremediation purposes. Oyster mushrooms can also be used industrially for mycoremediation purposes: they were used to treat soil that had been polluted with diesel oil. ",
@@ -174,7 +162,32 @@ const fungiData = [
   },
 ];
 
+///////////////////
+
+const fungiList = document.querySelector(".fungi-list");
+console.log(fungiList);
+
 fungiData.forEach((data) => {
+  const fungiItem = document.createElement("div");
+  fungiItem.classList.add("fungi-item");
+
+  const itemBtn = document.createElement("button");
+  itemBtn.id = "item-button";
+
+  const itemImg = document.createElement("img");
+  itemImg.src = data.imageSrc;
+  itemImg.alt = data.title + " Watercolor Illustration";
+
+  itemBtn.appendChild(itemImg);
+
+  fungiItem.appendChild(itemBtn);
+
+  fungiList.appendChild(fungiItem);
+});
+
+///////////////////
+
+/* fungiData.forEach((data) => {
   const itemContainer = document.createElement("article");
   itemContainer.classList.add("item-container");
 
@@ -224,4 +237,4 @@ fungiData.forEach((data) => {
   itemContainer.appendChild(fungiInfoContainer);
 
   fungi.appendChild(itemContainer);
-});
+}); */

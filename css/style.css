@@ -180,6 +180,46 @@ Importance section */
     width: 100%;
     z-index: 10;
 }
+/* Types of fungi */
+
+.fungi-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+    z-index: 50000;
+    border: 2px solid green;
+}
+
+.fungi-item{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fungi-item #item-button {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #8b47a1;
+    cursor: pointer;
+}
+
+
+
+.fungi-item img {
+    object-fit: contain;
+    height: 100px;
+    width: 100px;
+    
+}
+
+
+
 
 /* Fungi section */
 #fungi {
