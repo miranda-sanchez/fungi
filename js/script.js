@@ -78,42 +78,44 @@ function isElementInViewport(el) {
   );
 }
 
-// Function to animate the image
-function animateImage() {
-  const drippingImg = document.getElementById("dripping-img");
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to animate the image
+  function animateImage() {
+    const drippingImg = document.getElementById("dripping-img");
 
-  if (isElementInViewport(drippingImg)) {
-    // Get the current screen width
-    const screenWidth = window.innerWidth;
+    if (isElementInViewport(drippingImg)) {
+      // Get the current screen width
+      const screenWidth = window.innerWidth;
 
-    // Determine the height based on screen width using ternary operator
-    const imgHeight =
-      screenWidth >= 1400
-        ? "420px"
-        : screenWidth >= 1200
-        ? "300px"
-        : screenWidth >= 992
-        ? "280px"
-        : screenWidth >= 768
-        ? "190px"
-        : screenWidth >= 576
-        ? "170px"
-        : "150px"; // Default
+      // Determine the height based on screen width using ternary operator
+      const imgHeight =
+        screenWidth >= 1400
+          ? "420px"
+          : screenWidth >= 1200
+          ? "300px"
+          : screenWidth >= 992
+          ? "280px"
+          : screenWidth >= 768
+          ? "190px"
+          : screenWidth >= 576
+          ? "170px"
+          : "150px"; // Default
 
-    // Set the image height and transition
-    drippingImg.style.height = imgHeight;
-    drippingImg.style.transition = "1s";
+      // Set the image height and transition
+      drippingImg.style.height = imgHeight;
+      drippingImg.style.transition = "1s";
 
-    const fungi = document.getElementById("fungi");
-    fungi.style.paddingTop = parseInt(imgHeight) - 50 + "px";
+      const typesOfFungi = document.getElementById("types-of-fungi");
+      typesOfFungi.style.paddingTop = parseInt(imgHeight) - 40 + "px";
+    }
   }
-}
 
-// Attach the animateImage function to the scroll event
-window.addEventListener("scroll", animateImage);
+  // Attach the animateImage function to the scroll event
+  window.addEventListener("scroll", animateImage);
 
-// Initial call to check if the image is already in the viewport when the page loads
-animateImage();
+  // Initial call to check if the image is already in the viewport when the page loads
+  animateImage();
+});
 
 // FUNGI SECTION
 // 'const fungi' has already been declared inside function animateImage(), which is the section to which the code bellow is appended
@@ -165,14 +167,53 @@ const fungiData = [
 ///////////////////
 
 const fungiList = document.querySelector(".fungi-list");
-console.log(fungiList);
+
+const defaultFungiInformation = document.getElementById("fungi-information");
+const defaultH3 = defaultFungiInformation.querySelector("h3");
+const defaultP = defaultFungiInformation.querySelector("p");
+const defaultImg = defaultFungiInformation.querySelector("img");
+
+defaultH3.textContent = fungiData[0].title;
+defaultP.textContent = fungiData[0].paragraph;
+defaultImg.src = fungiData[0].imageSrc;
+defaultImg.alt = fungiData[0].title + " Watercolor Illustration";
+
+defaultFungiInformation.style.display = "grid";
 
 fungiData.forEach((data) => {
+  // List or menu of fungis
   const fungiItem = document.createElement("div");
   fungiItem.classList.add("fungi-item");
 
   const itemBtn = document.createElement("button");
-  itemBtn.id = "item-button";
+  itemBtn.classList.add("item-button");
+  itemBtn.addEventListener("click", () => {
+    const fungiInformation = document.getElementById("fungi-information");
+
+    const h3 = fungiInformation.querySelector("h3");
+    h3.textContent = data.title;
+
+    const p = fungiInformation.querySelector("p");
+    p.textContent = data.paragraph;
+
+    // Show the information section corresponding to the clicked button
+    fungiInformation.style.display = "grid";
+
+    // Hide previously scaled button
+    const previousScaledButton = document.querySelector(
+      ".fungi-item button.scaled"
+    );
+    if (previousScaledButton) {
+      previousScaledButton.classList.remove("scaled");
+    }
+
+    // Show current button with scale
+    itemBtn.classList.add("scaled");
+
+    const image = fungiInformation.querySelector("img");
+    image.src = data.imageSrc;
+    image.alt = data.title + " Watercolor Illustration";
+  });
 
   const itemImg = document.createElement("img");
   itemImg.src = data.imageSrc;

@@ -16,7 +16,7 @@ body {
     color: #FFFAE3;
 }
 
-h1, h2 {
+h1, h2{
     font-family: 'Bricolage Grotesque', sans-serif;
     padding: 1rem 0 0.5rem 0;
     /* Animation with JS */
@@ -181,13 +181,16 @@ Importance section */
     z-index: 10;
 }
 /* Types of fungi */
+#types-of-fungi {
+    background-color: #f7f8Df;
+}
 
 .fungi-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-items: center;
     justify-content: center;
-    padding-top: 150px;
+    padding-bottom: 1rem;
     z-index: 50000;
     border: 2px solid green;
 }
@@ -197,28 +200,57 @@ Importance section */
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 1rem;
 }
 
-.fungi-item #item-button {
+.fungi-item .item-button {
     height: 90px;
     width: 90px;
     border-radius: 50%;
     padding: 10px;
     margin: 10px;
-    background-color: #8b47a1;
+    background-color: rgba(84, 42, 101, 0.808);
     cursor: pointer;
 }
-
-
 
 .fungi-item img {
     object-fit: contain;
     height: 100px;
     width: 100px;
-    
 }
 
+#fungi-information{
+    display: grid;
+    place-content: center;
+    color: #290C36;
+    text-align: center;
+    padding: 2rem
+}
 
+#fungi-information h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+#fungi-information p {
+    padding-bottom: 1rem;
+}
+
+.fungi-item button.scaled {
+    transform: scale(1.2);
+    background-color: #431855;
+
+}
+
+#fungi-information {
+    border: 2px solid red;
+}
+
+#fungi-information img{ 
+    width: 90%;
+    object-fit: cover;
+}
 
 
 /* Fungi section */
