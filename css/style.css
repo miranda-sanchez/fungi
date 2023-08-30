@@ -180,7 +180,33 @@ Importance section */
     width: 100%;
     z-index: 10;
 }
+
+/* Scroll to top button */
+#scroll-to-top-btn {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    padding: 10px;
+    background-color: #c7c551;
+    border-bottom: 2px #280C35 solid;
+    border-radius: 50%;
+    z-index: 9;
+    /* Displayed with Js */
+    transition: bottom 1s, opacity 1s;
+    opacity: 0;
+}
+
+#scroll-to-top-btn:hover {
+    background-color: #c7c551e8;
+
+}
+
+#scroll-to-top-btn img {
+    height: 20px;
+}
+
 /* Types of fungi */
+
 #types-of-fungi {
     background-color: #f7f8Df;
 }
@@ -192,7 +218,6 @@ Importance section */
     justify-content: center;
     padding-bottom: 1rem;
     z-index: 50000;
-    border: 2px solid green;
 }
 
 .fungi-item{
@@ -219,12 +244,12 @@ Importance section */
     width: 100px;
 }
 
-#fungi-information{
+#fungi-information div{
     display: grid;
     place-content: center;
     color: #290C36;
     text-align: center;
-    padding: 2rem
+    padding: 2rem;
 }
 
 #fungi-information h3 {
@@ -243,120 +268,14 @@ Importance section */
 
 }
 
-#fungi-information {
-    border: 2px solid red;
-}
-
 #fungi-information img{ 
     width: 90%;
-    object-fit: cover;
-}
-
-
-/* Fungi section */
-#fungi {
-    background-color: #FFFAE3;
-    padding-top: 150px;
-    color: #290C36;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    column-gap: 100px;
-    align-items: center;
-    justify-content: center;
-    row-gap: 3rem;
-    position: relative;
-}
-
-#scroll-to-top-btn {
-    position: fixed;
-    bottom: -50px;
-    right: 20px;
-    padding: 10px;
-    background-color: #c7c551;
-    border-bottom: 2px #280C35 solid;
-    border-radius: 50%;
-    z-index: 9;
-    /* Displayed with Js */
-    transition: bottom 1s, opacity 1s;
-    opacity: 0;
-}
-
-#scroll-to-top-btn:hover {
-    background-color: #c7c551e8;
-
-}
-
-#scroll-to-top-btn img {
-    height: 20px;
-}
-
-.item-container {
-    display: grid;
-    grid-template-rows: auto 1fr; /* Auto for span, 1fr for figure */
-    align-items: center;
-    justify-items: center;
-    padding: 10px 15px;
-    margin: 1rem;
-}
-
-.visual-container {
-    position: relative;
-}
-
-.visual-container span {
-    background-color: #290C36;
-    width: 50px;
-    height: 50px;
-    color: #c7c551;
-    text-align: center;
-    line-height: 50px;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 2rem;
-    box-shadow: #c7c551 10px 10px;
-    position: absolute;
-    top: -15px;
-    left: -25px;
-}
-
-.visual-container figure {
-    height: 300px;
-    width: 300px;
-    padding: 10px;
-    background-color: #290c36bd;
-}
-
-.visual-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.visual-container button {
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-}
-
-
-.info-container {
-    text-align: center;
-    background-color: #290c36;
-    padding: 1.5rem;
-    display: grid;
-    place-items: center;
-    color: #FFFAE3;
-}
-
-.info-container h2{
-    text-transform: lowercase;
-    text-align: center;
-    opacity: 1;
-    transform: translateY(0);
+    max-width: 400px;
 }
 
 /* Footer */
 footer{
-    background-color: #8b47a1;
+    background-color: #280A35;
     position: relative;
     height:200px;
     display: flex;
@@ -376,10 +295,7 @@ footer img {
 }
 
 @media (min-width: 576px) {
-    #fungi {
-        background-color: rgba(0, 0, 255, 0.219);
-    }
-
+    /* Types of fungi */
     #scroll-to-top-btn img {
         height: 30px;
     }
@@ -391,14 +307,17 @@ footer img {
         margin-top: 200px;
     }
 
-    #fungi {
-        background-color: #257e2a;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    /* Types of fungi */
+    #types-of-fungi {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
     }
-    .visual-container figure {
-        height: 400px;
-        width: 400px;
+
+    .fungi-list {
+        display: flex;
+        flex-direction: column;
     }
+
 }
 
 @media (min-width: 992px) {
@@ -410,12 +329,9 @@ footer img {
         height: 700px;
     }
 
+    /* Types of fungi */
     #scroll-to-top-btn img {
         height: 40px;
-    }
-
-    #fungi {
-        background-color: #7e2577;
     }
 }
 
@@ -431,17 +347,15 @@ footer img {
         height: 900px;
     }
 
-    #fungi {
-        background-color: #966423;
+    /*Types of fungi */
+    #fungi-information {
+        grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media (min-width: 1400px) {
     .view:nth-child(2) figure img {
         height: 1000px;
-    }
-
-    #fungi {
-        background-color: hsl(4, 51%, 83%);
     }
 }

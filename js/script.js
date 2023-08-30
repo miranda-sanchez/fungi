@@ -164,8 +164,6 @@ const fungiData = [
   },
 ];
 
-///////////////////
-
 const fungiList = document.querySelector(".fungi-list");
 
 const defaultFungiInformation = document.getElementById("fungi-information");
@@ -225,57 +223,3 @@ fungiData.forEach((data) => {
 
   fungiList.appendChild(fungiItem);
 });
-
-///////////////////
-
-/* fungiData.forEach((data) => {
-  const itemContainer = document.createElement("article");
-  itemContainer.classList.add("item-container");
-
-  const fungiVisualContainer = document.createElement("div");
-  fungiVisualContainer.classList.add("visual-container");
-
-  const span = document.createElement("span");
-  span.textContent = data.id;
-
-  const figure = document.createElement("figure");
-
-  const img = document.createElement("img");
-  img.src = data.imageSrc;
-  img.alt = data.title + " watercolor illustration";
-
-  const btn = document.createElement("button");
-  btn.textContent = "Discover";
-  btn.addEventListener("click", () => {
-    const sideImages = document.getElementById("side-images");
-    sideImages.style.display = "flex";
-  });
-
-  const fungiInfoContainer = document.createElement("div");
-  fungiInfoContainer.classList.add("info-container");
-  fungiInfoContainer.style.display = "none";
-
-  const h2 = document.createElement("h2");
-  h2.textContent = data.title;
-
-  const paragraph = document.createElement("p");
-  paragraph.textContent = data.paragraph;
-  paragraph.classList.add("animate");
-
-  // Append the img element inside figure
-  figure.appendChild(img);
-
-  fungiVisualContainer.appendChild(span);
-  fungiVisualContainer.appendChild(figure);
-  fungiVisualContainer.appendChild(btn);
-
-  itemContainer.appendChild(fungiVisualContainer);
-
-  // Append the h2 and paragraph elements inside the div
-  fungiInfoContainer.appendChild(h2);
-  fungiInfoContainer.appendChild(paragraph);
-
-  itemContainer.appendChild(fungiInfoContainer);
-
-  fungi.appendChild(itemContainer);
-}); */
