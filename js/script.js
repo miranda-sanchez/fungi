@@ -9,7 +9,7 @@ enterButton.addEventListener("click", function () {
 
   images.forEach((img) => {
     img.style.transition = "transform 1s ease-in";
-    img.style.transform = "scale(10)";
+    img.style.transform = "scale(13)";
   });
 
   setTimeout(function () {
