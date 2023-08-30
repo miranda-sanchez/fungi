@@ -1,26 +1,27 @@
 // FIRST VIEW
 const enterButton = document.getElementById("enter-btn");
-const images = document.querySelectorAll(".view:first-child figure img");
-const section = document.querySelector(".view:first-child section");
 
 enterButton.addEventListener("click", function () {
+  const images = document.querySelectorAll("#first-page figure img");
+  const section = document.querySelector("#first-page section");
+
   section.style.display = "none";
 
-  images.forEach((img, index) => {
-    img.style.width = "300%";
-    img.style.position = "fixed";
-    img.style.transition = "width 3s ease-in";
-
-    /*const transitionDuration = index === 0 ? "6s" : index === 1 ? "3s" : "2s";
-    img.style.transition = `height ${transitionDuration} linear`;*/
+  images.forEach((img) => {
+    img.style.transition = "transform 1s ease-in";
+    img.style.transform = "scale(10)";
   });
 
   setTimeout(function () {
-    const firstView = document.querySelector(".view:first-child");
+    const firstView = document.getElementById("first-page");
     firstView.style.display = "none";
-    const secondView = document.querySelector(".view:nth-child(2)");
-    secondView.style.display = "block";
-  }, 3000);
+    const secondView = document.querySelector("header");
+    secondView.style.display = "flex";
+    const main = document.querySelector("main");
+    main.style.display = "block";
+    const footer = document.querySelector("footer");
+    footer.style.display = "flex";
+  }, 800);
 });
 
 // ANIMATION: appearence from top to bottom

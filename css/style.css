@@ -23,7 +23,6 @@ h1, h2{
     opacity: 0;
     transform: translateY(20px);
     transition: 1s ease;
-    
 }
 
 p {
@@ -53,69 +52,66 @@ button {
 
 /* MOBILE-FIRST APPROACH */
 /* First view */
-#side-images {
-    display: none;
-    position: fixed;
-    top: 0;
+#first-page {
     height: 100vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: space-between;
-    z-index: 4000;
-  }
-  
-  #side-images img {
-    height: 50vh;
-  }
-  
-  img:nth-child(odd) {
-    left: 0;
-  }
-  
-  img:nth-child(even)  {
-    right: 0;
-  }
-
-
-
-.view:first-child {
-    height: 100vh;
-    background-color: #FFFAE3;
+    background-image: linear-gradient(
+        0deg,
+        hsl(282deg 71% 56%) 2%,
+        hsl(282deg 58% 32%) 52%,
+        hsl(283deg 68% 11%) 100%
+        );
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     font-size: 20px;
     /* Delete this after having finished the design */
-    display: none; 
+    
 }
  
-.view:first-child section {
+#first-page section {
     text-align: center;
     z-index: 10;
     height: 50%;
     margin: 0 20px;
 }
 
+#first-page h1 {
+    margin-bottom: 5rem;
+}
 
-.view:first-child figure img {
-    width: 100%;
+#first-page figure img {
+    height: 100vh;
     position: absolute;
-    bottom: 0;
+}
+
+#first-page figure img:first-child {
+    top: 0;
     left: 0;
 }
 
+#first-page figure img:nth-child(2) {
+    bottom: 0;
+    right: 0;
+}
+
+
+
 /* Second view */
-.view:nth-child(2) {
+header {
+    /* Changes once the user enters the page*/
     display: none;
-    /* Delete this after having finished the design */
-    display: flex;
     justify-content: center;
     height: 90vh;
     position: relative;
-    background-image: url("../img/stars.PNG");
-    background-size: cover;
+    /* CHOOSE ONE */
     background-image: linear-gradient(to bottom, #280a35, #3f184e, #572769, #703784, #8b47a1);
+    background-image: linear-gradient(
+  0deg,
+  hsl(282deg 69% 79%) 2%,
+  hsl(281deg 42% 56%) 52%,
+  hsl(282deg 66% 34%) 100%
+);
     z-index: -100;
 }
 
@@ -126,7 +122,7 @@ button {
     width: 600px;
     z-index: -20;
 }
-.view:nth-child(2) section {
+header section {
     margin: 0 20px;
     text-align: center;
     height: 90vh;
@@ -137,27 +133,32 @@ button {
     z-index: -10;
 }
 
-.view:nth-child(2) figure img {
+header figure img {
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-.view:nth-child(2) figure img:first-child {
+header figure img:first-child {
     z-index: -12;
 }
 
-.view:nth-child(2) figure img:nth-child(2) {
+header figure img:nth-child(2) {
     z-index: -10;
 }
 
-.view:nth-child(2) figure img:last-child {
+header figure img:last-child {
     z-index: -6;
 }
 
-/* Main
-Importance section */
+/* Main */
+main {
+    /* Shown upon click on "enter" button */
+    display: none;
+}
+
+/* Importance section */
 #importance {
     padding-top: 10vh;
     text-align: center;
@@ -275,10 +276,11 @@ Importance section */
 
 /* Footer */
 footer{
+    /* Shown upon click on "enter" button */
+    display: none;
     background-color: #280A35;
     position: relative;
     height:200px;
-    display: flex;
 }
 
 footer span {
@@ -287,12 +289,6 @@ footer span {
     padding: 1rem;
 }
 
-footer img {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
 
 @media (min-width: 576px) {
     /* Types of fungi */
@@ -302,7 +298,7 @@ footer img {
 }
 
 @media (min-width: 768px) {
-    .view:nth-child(2) section {
+    header section {
         display: block;
         margin-top: 200px;
     }
@@ -325,7 +321,7 @@ footer img {
         font-size: 20px;
     }
 
-    .view:nth-child(2) figure img {
+    header figure img {
         height: 700px;
     }
 
@@ -336,14 +332,14 @@ footer img {
 }
 
 @media (min-width: 1200px) {
-    .view:nth-child(2){
+    header {
         height: 100vh;
     }
-    .view:nth-child(2) section {
+    header section {
         display: block;
         margin-top: 50px;
     }
-    .view:nth-child(2) figure img {
+    header figure img {
         height: 900px;
     }
 
@@ -355,7 +351,7 @@ footer img {
 }
 
 @media (min-width: 1400px) {
-    .view:nth-child(2) figure img {
+    header figure img {
         height: 1000px;
     }
 }
