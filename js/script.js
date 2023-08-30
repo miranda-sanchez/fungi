@@ -20,7 +20,7 @@ enterButton.addEventListener("click", function () {
     const main = document.querySelector("main");
     main.style.display = "block";
     const footer = document.querySelector("footer");
-    footer.style.display = "flex";
+    footer.style.display = "grid";
   }, 800);
 });
 
@@ -150,6 +150,13 @@ const fungiData = [
     imageSrc: "img/fungi5.PNG",
   },
   {
+    id: "05",
+    title: "Agaricus Bisporus",
+    paragraph:
+      "Agaricus bisporus is an edible basidiomycete mushroom native to grasslands in Eurasia and North America. It has two color states while immature (white and brown) both of which have various names, with additional names for the mature state. A. bisporus is cultivated in more than 70 countries and is one of the most commonly and widely consumed mushrooms in the world.",
+    imageSrc: "img/fungi9.PNG",
+  },
+  {
     id: "06",
     title: "Morchella Esculenta",
     paragraph:
@@ -170,8 +177,10 @@ const fungiList = document.querySelector(".fungi-list");
 const defaultFungiInformation = document.getElementById("fungi-information");
 const defaultH3 = defaultFungiInformation.querySelector("h3");
 const defaultP = defaultFungiInformation.querySelector("p");
+const defaultSpan = defaultFungiInformation.querySelector("span");
 const defaultImg = defaultFungiInformation.querySelector("img");
 
+defaultSpan.textContent = fungiData[0].id;
 defaultH3.textContent = fungiData[0].title;
 defaultP.textContent = fungiData[0].paragraph;
 defaultImg.src = fungiData[0].imageSrc;
@@ -188,6 +197,9 @@ fungiData.forEach((data) => {
   itemBtn.classList.add("item-button");
   itemBtn.addEventListener("click", () => {
     const fungiInformation = document.getElementById("fungi-information");
+
+    const span = fungiInformation.querySelector("span");
+    span.textContent = data.id;
 
     const h3 = fungiInformation.querySelector("h3");
     h3.textContent = data.title;
