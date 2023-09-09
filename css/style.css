@@ -152,7 +152,7 @@ header figure img:last-child {
     z-index: -6;
 }
 
-/* Main */
+/* MAIN */
 main {
     /* Shown upon click on "enter" button */
     display: none;
@@ -213,10 +213,9 @@ main {
 
 .fungi-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     align-items: center;
     justify-content: center;
-    padding-bottom: 1rem;
     z-index: 50000;
 }
 
@@ -229,8 +228,8 @@ main {
 }
 
 .fungi-item .item-button {
-    height: 90px;
-    width: 90px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     padding: 10px;
     margin: 10px;
@@ -240,8 +239,8 @@ main {
 
 .fungi-item img {
     object-fit: contain;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
 }
 
 #fungi-information div{
@@ -280,7 +279,7 @@ main {
     max-width: 400px;
 }
 
-/* Footer */
+/* FOOTER */
 footer{
     /* Shown upon click on "enter" button - display changes to grid */
     display: none;
@@ -331,6 +330,15 @@ footer ul li {
         flex-direction: column;
     }
 
+    .fungi-item .item-button {
+        height: 100px;
+        width: 100px;
+    }
+
+    .fungi-item img {
+        height: 100px;
+        width: 100px;
+    }
 }
 
 @media (min-width: 992px) {

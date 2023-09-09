@@ -1,4 +1,4 @@
-// FIRST VIEW
+//////////////////// FIRST VIEW ////////////////////
 const enterButton = document.getElementById("enter-btn");
 
 enterButton.addEventListener("click", function () {
@@ -24,7 +24,7 @@ enterButton.addEventListener("click", function () {
   }, 800);
 });
 
-// ANIMATION: appearence from top to bottom
+//////////////////// ANIMATION: appearence from top to bottom ////////////////////
 const headingsToAnimate = document.querySelectorAll("h1, h2");
 const pToAnimate = document.querySelectorAll("p");
 
@@ -49,7 +49,7 @@ pToAnimate.forEach((paragraph) => {
   observer.observe(paragraph);
 });
 
-// SCROLL TO TOP BUTTON
+//////////////////// SCROLL TO TOP BUTTON ////////////////////
 const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
 
 window.addEventListener("scroll", () => {
@@ -66,7 +66,7 @@ scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// IMPORTANCE SECTION
+//////////////////// IMPORTANCE SECTION ////////////////////
 // Function to check if an element is in the viewport
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
   animateImage();
 });
 
-// FUNGI SECTION
+//////////////////// TYPES OF FUNGI SECTION ////////////////////
 // 'const fungi' has already been declared inside function animateImage(), which is the section to which the code bellow is appended
 const fungiData = [
   {
